@@ -3,6 +3,8 @@
 ## Overview:
 This is a supervised multiclass text classification algorithm that draws on tf-idf, random forest, support vector machines, naive bayes, and logistic regression in order to associate medical device keywords with FDA committee categories. 
 
+(More info available here: (https://www.fda.gov/advisorycommittees/committeesmeetingmaterials/medicaldevices/medicaldevicesadvisorycommittee/default.htm))
+
 This would be the first (post-processing) component of a data pipeline that would ultimately allow the end user - an investor performing due dilligence on a medical device startup - to input keywords related to the startup's medical device product, and receive a score indicating whether this medical device partnership is worth pursuing.
 
 ## Key Technologies:
