@@ -1,7 +1,7 @@
 # ai-liner: DV Hacks AI project repository
 
 ## Overview:
-This is a multiclass text classification algorithm that draws on tf-idf, random forest, support vector machines, naive bayes, and logistic regression in order to associate medical device keywords with FDA committee categories. This would be the first step in a data pipeline that would allow the end user (an investor looking into a medical device startup) to input keywords related to a new medical device product, and receive a score indicating whether this medical device partnership is worth pursuing.
+This project consists of a multiclass text classification algorithm that draws on tf-idf, random forest, support vector machines, naive bayes, and logistic regression in order to associate medical device keywords with FDA committee categories. This would be the first step in a data pipeline that would allow the end user (an investor performing due dilligence on a medical device startup) to input keywords related to the startup's medical device product, and receive a score indicating whether this medical device partnership is worth pursuing.
 
 ## Key Technologies:
 Sci-kit learn for natural language processing and machine learning; Seaborn for visualization
