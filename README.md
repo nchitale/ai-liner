@@ -28,3 +28,6 @@ Finally, we compared the accuracy between the predicted and actual committees fo
 Using a chi-squared test we obtained the most correlated terms with each committee (for example, "oxygen" and "airway" for AN - Anesthesiology). 
 
 *More info on FDA medical device committees available here: https://www.fda.gov/advisorycommittees/committeesmeetingmaterials/medicaldevices/medicaldevicesadvisorycommittee/default.htm
+
+To view the model selection process, see "committees.py".
+To get results from the selected model, download and run the "keywords-to-committees.ipynb" Jupyter notebook. Further instructions for downloading relevant data are within the notebook. Line 62 has a function that takes in a medical keyword and outputs the most associated FDA committee, and line 63 shows sample output for this function. Lines 64 and 65 publish the function to the TabPy server so that it can be linked with additional steps in the pipeline to score a medical device for viability.
