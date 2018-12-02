@@ -12,6 +12,18 @@ import matplotlib.pyplot as plt
 from io import StringIO
 
 
+# In[22]:
+
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+
+# In[33]:
+
+
+from sklearn.feature_selection import chi2
+
+
 # In[4]:
 
 
@@ -96,4 +108,54 @@ id_to_category
 fig = plt.figure(figsize=(8,6))
 combined_df.groupby('REVIEWADVISECOMM').DEVICENAME.count().plot.bar(ylim=0)
 plt.show()
+
+
+# In[27]:
+
+
+# has unique product codes
+df = combined_df.drop_duplicates(subset='DEVICENAME')
+df
+
+
+# In[29]:
+
+
+tfidf = TfidfVectorizer(sublinear_tf=True, min_df=1, norm='l2', encoding='latin-1', ngram_range=(1, 2), stop_words='english')
+
+
+# In[30]:
+
+
+features = tfidf.fit_transform(df.DEVICENAME).toarray()
+
+
+# In[31]:
+
+
+labels = df.category_id
+
+
+# In[32]:
+
+
+features.shape 
+# Each of 2796 product codes is represented by 9675 features
+# Representing the tf-idf score for different unigrams and bigrams
+
+
+# In[35]:
+
+
+# Find terms most correlated with each advisory committee
+N = 2
+for REVIEWADVISECOMM, category_id in sorted(category_to_id.items()):
+    features_chi2 = chi2(features, labels == category_id)
+    indices = np.argsort(features_chi2[0])
+    feature_names = np.array(tfidf.get_feature_names())[indices]
+    unigrams = [v for v in feature_names if len(v.split(' ')) == 1]
+    bigrams = [v for v in feature_names if len(v.split(' ')) == 2]
+    print("# '{}':".format(REVIEWADVISECOMM))
+    print("  . Most correlated unigrams:\n. {}".format('\n. '.join(unigrams[-N:])))
+    print("  . Most correlated bigrams:\n. {}".format('\n. '.join(bigrams[-N:])))
 
