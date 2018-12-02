@@ -1,9 +1,7 @@
 # ai-liner: DV Hacks AI project repository
 
 ## Overview:
-This is a supervised multiclass text classification algorithm that draws on tf-idf, random forest, support vector machines, naive bayes, and logistic regression in order to associate medical device keywords with FDA committee categories. 
-
-(More info available here: https://www.fda.gov/advisorycommittees/committeesmeetingmaterials/medicaldevices/medicaldevicesadvisorycommittee/default.htm)
+This is a supervised multiclass text classification algorithm that draws on tf-idf, random forest, support vector machines, naive bayes, and logistic regression in order to associate medical device keywords with FDA committee categories*.
 
 This would be the first (post-processing) component of a data pipeline that would ultimately allow the end user - an investor performing due dilligence on a medical device startup - to input keywords related to the startup's medical device product, and receive a score indicating whether this medical device partnership is worth pursuing.
 
@@ -28,3 +26,5 @@ Finally, we compared the accuracy between the predicted and actual committees fo
 ![Confusion Matrix](https://github.com/nchitale/ai-liner/blob/master/confusion_matrix.png)
 
 Using a chi-squared test we obtained the most correlated terms with each committee (for example, "oxygen" and "airway" for AN - Anesthesiology). 
+
+*More info on FDA medical device committees available here: https://www.fda.gov/advisorycommittees/committeesmeetingmaterials/medicaldevices/medicaldevicesadvisorycommittee/default.htm
