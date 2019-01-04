@@ -5,6 +5,8 @@ This is a supervised multiclass text classification algorithm that draws on tf-i
 
 This would be the first (post-processing) component of a data pipeline that would ultimately allow the end user - an investor performing due dilligence on a medical device startup - to input keywords related to the startup's medical device product, and receive a score indicating whether this medical device partnership is worth pursuing.
 
+![Pitch Screenshot](https://github.com/nchitale/ai-liner/blob/master/pitch_screenshot.png)
+
 ## Key Technologies:
 Scikit-learn for natural language processing and machine learning; Seaborn for visualization
 
